@@ -8,10 +8,12 @@ import pyodbc
 
 print(pyodbc.drivers())
 
-dbcon = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
-'Server=explorer-interns;'
-'Database=explorer;'
-'Trusted_Connection=yes;')
+server = 'explorer-interns'
+database = 'explorer-interns.database.windows.net'
+username = 'explorer'
+password = 'expl@rerint@rns@1'
+
+dbcon = pyodbc.connect("DRIVER={ODBC Driver 17 for SQL Server};SERVER=explorer-interns.database.windows.net;DATABASE=explorer-interns.database.windows.net;UID=explorer;PWD=expl@rerint@rns@1", autocommit = True)
 cursor = dbcon.cursor()
 
 try:
