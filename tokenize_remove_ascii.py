@@ -9,6 +9,7 @@ from nltk import word_tokenize
 
 
 current_list = transform.data_list
+curr = [str(e) for e in current_list ]
 ascii_set = set(string.printable)
 # words = set(nltk.corpus.words.words())
 # d = english_words_set
@@ -37,10 +38,10 @@ def tokenize(data):
   tokenized_sents = [word_tokenize(i) for i in data]
 
 
-tokenize(example)
+tokenize(curr)
 
 # remove_non_english(example)
-# print(example)
+# print(curr)
 
-example = remove_non_ascii(example)
-print(example)
+curr = remove_non_ascii(curr)
+print(curr)
