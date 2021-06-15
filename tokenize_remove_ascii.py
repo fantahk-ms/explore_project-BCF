@@ -15,10 +15,10 @@ ascii_set = set(string.printable)
 # d = english_words_set
 
 
-example = ['Mary had a little lamb' , 
-           'Jack went up the hill' , 
+example = ['Mary had a little lamb None' , 
+           'Jack went up the hill Grand Total' , 
            'Jill followed suit' ,'i woke up suddenly' ,
-           'it was a really bad dream...', '通过代理上限MDATP设备状态异常 通过代理上限MDATP设备状态异常 apple banana 1234']
+           'it was a really bad dream...', '通过代理上限MDATP设备状态异常 通过代理上限MDATP设备状态异常 apple banana 1234', 'None', 'None Grand Total']
 
 # def remove_non_english(data):
     # words = set(nltk.corpus.words.words())
@@ -37,11 +37,18 @@ def remove_non_ascii(data):
 def tokenize(data):
   tokenized_sents = [word_tokenize(i) for i in data]
 
+def remove_extra(data):
+     bad_words = ['None', 'Grand Total']
+     for w in data:
+         if w in bad_words:
+             data.remove(w)
 
-tokenize(curr)
 
-# remove_non_english(example)
+tokenize(example)
+
+# remove_extra(curr)
 # print(curr)
 
-curr = remove_non_ascii(curr)
-print(curr)
+example = remove_non_ascii(example)
+remove_extra(example)
+print(example)
