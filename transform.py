@@ -2,7 +2,6 @@
 # import pymysql
 import pandas as pd
 import pyodbc
-from nltk.tokenize import word_tokenize
 # import socket
 
 # socket.getaddrinfo('127.0.0.1', 8080)
@@ -28,7 +27,7 @@ data_list = [df.columns.values.tolist()] + df.values.tolist()
 
 
 
-print(data_list)
+# print(data_list)
 
 
 dbcon.close()
