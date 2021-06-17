@@ -46,19 +46,20 @@ def remove_extra(data):
    tokens = [word_tokenize(i) for i in data]
   #  filtered = []
    for i in range(len(tokens)):
-       filtered = [t for t in tokens[i] if not t in extra]
+       filtered = [t for t in tokens[i] if t.isalpha() and not t in extra]
        # print(*filtered)
        data[i] = filtered   
       # print("\n")
    # return filtered
 
 
-def remove_non_number_words(data):
-    data = [str(x) for x in data]
-    tokens = [word_tokenize(i) for i in data]
-    for i in range(len(tokens)):
-        y = str(tokens[i])
-        re.sub(r'[\W_]+', ' ', y)
+# def remove_nonwords(data):
+    # data = [str(x) for x in data]
+    # tokens = [word_tokenize(i) for i in data]
+    #for i in range(len(tokens)):
+        #y = str(tokens[i])
+        #re.sub(r'[\W_]+', ' ', y)
+    
     
 
 
@@ -70,7 +71,7 @@ tokenize(example)
 # remove_extra(example)
 example = remove_non_ascii(example)
 remove_extra(example)
-remove_non_number_words(example)
+# remove_non_number_words(example)
 print(example)
 
 # try switching order
