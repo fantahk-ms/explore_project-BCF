@@ -22,10 +22,11 @@ curr = example
 badwords = ['Grand', 'Total','None', 'Hello','Hi','Team','How','I','\\n','Please']
 punctuation = ['!','(',')','-','[',']','{','}',';',':','\\','<','>','.','/','?','@','#','$','%','^','&','*','_','~']
 
-tokens = [word_tokenize(i) for i in curr]
-for i in range(len(tokens)):
- filtered_text = [t for t in tokens[i] if not t in stopwords.words("english") + badwords + punctuation]
+def removestopwords(data):
+    tokens = [word_tokenize(i) for i in data]
+    for i in range(len(tokens)):
+        filtered_text = [t for t in tokens[i] if not t in stopwords.words("english") + badwords + punctuation]
  #add to new list
- print(*filtered_text)
- print("\n")
+        print(*filtered_text)
+        print("\n")
 

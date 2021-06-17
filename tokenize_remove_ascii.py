@@ -42,7 +42,7 @@ def tokenize(data):
  # return data
 
 def remove_extra(data):
-   extra = ['None', 'Grand', 'Total']
+   # extra = ['None', 'Grand', 'Total']
    tokens = [word_tokenize(i) for i in data]
   #  filtered = []
    for i in range(len(tokens)):
