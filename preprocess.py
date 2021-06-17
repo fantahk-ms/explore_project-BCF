@@ -11,7 +11,7 @@ from nltk import tokenize
 from nltk.stem import PorterStemmer
 
 
-current_list = transform.data_list
+current_list = transform.support_list
 curr = [str(e) for e in current_list ]
 
 ascii_set = set(string.printable)

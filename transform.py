@@ -16,14 +16,28 @@ password = 'expl@rerint@rns@1'
 dbcon = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password, autocommit = True)
 cursor = dbcon.cursor()
 
-SQL_Query = pd.read_sql_query(
+SQL_Support = pd.read_sql_query(
     'SELECT * FROM explorer.dbo.Support', dbcon)
 
-df = pd.DataFrame(SQL_Query, columns=['Title', 'UserDescription'])
+SQL_train = pd.read_sql_query(
+    'SELECT * FROM explorer.dbo.Categorized training data', dbcon)
+
+SQL_test = pd.read_sql_query(
+    'SELECT * FROM explorer.dbo.Uncategorized test data', dbcon)
+
+df_support = pd.DataFrame(SQL_Support, columns=['Title', 'UserDescription'])
     # print(df)
     # print('The data type of df is: ', type(df))
+df_training = pd.DataFrame(SQL_train, columns=['SubArea', 'Title', 'UserDescription'])
 
-data_list = [df.columns.values.tolist()] + df.values.tolist()
+df_testing = pd.DataFrame(SQL_test, columns=['Title', 'UserDescription'])
+
+
+support_list = [df_support.columns.values.tolist()] + df_support.values.tolist()
+
+training_list = [df_training.columns.values.tolist()] + df_training.values.tolist()
+
+testing_list = [df_testing.columns.values.tolist()] + df_testing.values.tolist()
 
 
 
