@@ -20,10 +20,10 @@ SQL_Support = pd.read_sql_query(
     'SELECT * FROM explorer.dbo.Support', dbcon)
 
 SQL_train = pd.read_sql_query(
-    'SELECT * FROM explorer.dbo.Categorized training data', dbcon)
+    'SELECT * FROM explorer.dbo.Training', dbcon)
 
 SQL_test = pd.read_sql_query(
-    'SELECT * FROM explorer.dbo.Uncategorized test data', dbcon)
+    'SELECT * FROM explorer.dbo.Testing', dbcon)
 
 df_support = pd.DataFrame(SQL_Support, columns=['Title', 'UserDescription'])
     # print(df)
@@ -41,8 +41,9 @@ testing_list = [df_testing.columns.values.tolist()] + df_testing.values.tolist()
 
 
 
-# print(data_list)
-
+print(training_list)
+# print("\n")
+# print(testing_list)
 
 dbcon.close()
 
