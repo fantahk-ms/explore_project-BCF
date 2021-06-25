@@ -25,6 +25,9 @@ SQL_train = pd.read_sql_query(
 SQL_test = pd.read_sql_query(
     'SELECT * FROM explorer.dbo.Testing', dbcon)
 
+SQL_cluster = pd.read_sql_query(
+    'SELECT * FROM explorer.dbo.ClusterData', dbcon)
+
 df_support = pd.DataFrame(SQL_Support, columns=['Title', 'UserDescription'])
     # print(df)
     # print('The data type of df is: ', type(df))
@@ -32,12 +35,17 @@ df_training = pd.DataFrame(SQL_train, columns=['SubArea', 'Title', 'UserDescript
 
 df_testing = pd.DataFrame(SQL_test, columns=['Title', 'UserDescription'])
 
+df_cluster = pd.DataFrame(SQL_cluster, columns=['Title', 'UserDescription'])
+
+
 
 support_list = [df_support.columns.values.tolist()] + df_support.values.tolist()
 
 training_list = [df_training.columns.values.tolist()] + df_training.values.tolist()
 
 testing_list = [df_testing.columns.values.tolist()] + df_testing.values.tolist()
+
+cluster_list = [df_cluster.columns.values.tolist()] + df_cluster.values.tolist()
 
 
 # print(training_list)
