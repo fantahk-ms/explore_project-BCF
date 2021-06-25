@@ -40,8 +40,7 @@ training_list = [df_training.columns.values.tolist()] + df_training.values.tolis
 testing_list = [df_testing.columns.values.tolist()] + df_testing.values.tolist()
 
 
-
-print(training_list)
+# print(training_list)
 # print("\n")
 # print(testing_list)
 

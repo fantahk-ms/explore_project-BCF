@@ -2,8 +2,8 @@ import transform
 import string
 import nltk
 from nltk.corpus import stopwords
-nltk.download('stopwords')
-nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('punkt')
 from nltk import word_tokenize
 import re
 from nltk import tokenize
@@ -64,16 +64,16 @@ def removestopwords(data):
         filtered_text = [t for t in tokens[i] if not t in stopwords.words("english")]
         data[i] = filtered_text   
 
-tokenize(curr)
+tokenize(example)
 
-curr = remove_non_ascii(curr)
-remove_extra(curr)
+example = remove_non_ascii(example)
+remove_extra(example)
 # removestopwords(example)
 
 #for i in example:
     #i = stemSentence(i)
 
-curr = stemSentence(curr)
+example = stemSentence(example)
 
-print(curr)
+print(example)
 
