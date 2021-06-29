@@ -37,14 +37,16 @@ def tokenize(data):
 
 def remove_extra(data):
    # extra = ['None', 'Grand', 'Total']
-   tokens = [word_tokenize(i) for i in data]
+  tokens = [word_tokenize(i) for i in data]
   #  filtered = []
-   for i in range(len(tokens)):
+  for i in range(len(tokens)):
        filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        # print(*filtered)
-       data[i] = filtered   
+       data[i] = " ".join(filtered)
       # print("\n")
    # return filtered
+  # for i in data:
+      # filtered = [t for t in i if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
 
 
 def stemSentence(sentence):
