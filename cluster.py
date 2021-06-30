@@ -14,7 +14,7 @@ cluster_list = transform.cluster_list
 
 # convert to list
 print("here, line 16")
-curr = [str(e) for e in cluster_list ]
+# curr = [str(e) for e in cluster_list ]
 print("here, line 18")
 
 #example to run on
@@ -73,6 +73,8 @@ test_sentences = ['Chemical compunds are used for preparing bombs based on some 
 
 #turning list into actual list
 #test_sentences = ast.literal_eval(test_sentences)
+
+curr = [str(e) for e in example ]
 
 
 # pre-processing
