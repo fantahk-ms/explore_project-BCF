@@ -69,6 +69,8 @@ def removestopwords(data):
 
 # new_ex = [str(e) for e in example ]
 
+# curr = list(map(str, example))
+
 tokenize(curr)
 print("here, after tokenize")
 
