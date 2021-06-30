@@ -13,7 +13,9 @@ import ast
 cluster_list = transform.cluster_list
 
 # convert to list
+print("here, line 16")
 curr = [str(e) for e in cluster_list ]
+print("here, line 18")
 
 #example to run on
 example = ["Cricket is a bat and ball game played between two teams of eleven players each on a cricket field.", 
@@ -74,13 +76,24 @@ test_sentences = ['Chemical compunds are used for preparing bombs based on some 
 
 
 # pre-processing
+print("here, before pre-processing")
 preprocess.tokenize(curr)
+print("here, after tokenize")
 curr = preprocess.remove_non_ascii(curr)
+print("here, after remove non-ascii")
 preprocess.remove_extra(curr)
+print("here, after remove extra")
 curr = preprocess.stemSentence(curr)
+print("here, after stem sentence")
 
+
+print("here, after pre-processing")
+
+print("here, before list transform")
 #turning list into actual list
 curr = ast.literal_eval(curr)
+print("here, after list transform")
+
 
 #print(cluster_list)
 

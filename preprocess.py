@@ -66,16 +66,27 @@ def removestopwords(data):
         filtered_text = [t for t in tokens[i] if not t in stopwords.words("english")]
         data[i] = filtered_text   
 
-tokenize(example)
 
-example = remove_non_ascii(example)
-remove_extra(example)
+new_ex = [str(e) for e in example ]
+
+tokenize(curr)
+print("here, after tokenize")
+
+
+curr = remove_non_ascii(new_ex)
+print("here, after remove non-ascii")
+
+remove_extra(new_ex)
+print("here, after remove extra")
+
 # removestopwords(example)
 
 #for i in example:
     #i = stemSentence(i)
 
-example = stemSentence(example)
+new_ex = stemSentence(new_ex)
+print("here, after stemming")
 
-# print(example)
+
+print(new_ex)
 
