@@ -72,14 +72,14 @@ def removestopwords(data):
 # curr = list(map(str, example))
 
 tokenize(curr)
-print("here, after tokenize")
+print("here, after tokenize pre-process")
 
 
 curr = remove_non_ascii(curr)
-print("here, after remove non-ascii")
+print("here, after remove non-ascii pre-process")
 
 remove_extra(curr)
-print("here, after remove extra")
+print("here, after remove extra pre-process")
 
 # removestopwords(example)
 
@@ -87,7 +87,7 @@ print("here, after remove extra")
     #i = stemSentence(i)
 
 curr = stemSentence(curr)
-print("here, after stemming")
+print("here, after stemming pre-process")
 
 
 print(curr)
