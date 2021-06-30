@@ -85,7 +85,7 @@ curr = preprocess.remove_non_ascii(curr)
 print("here, after remove non-ascii")
 preprocess.remove_extra(curr)
 print("here, after remove extra")
-curr = [preprocess.stemSentence(curr)]
+curr = ast.literal_eval([preprocess.stemSentence(curr)])
 print("here, after stem sentence")
 
 
@@ -93,7 +93,7 @@ print("here, after pre-processing")
 
 print("here, before list transform")
 #turning list into actual list
-curr = ast.literal_eval(curr)
+# curr = ast.literal_eval(curr)
 print("here, after list transform")
 
 
