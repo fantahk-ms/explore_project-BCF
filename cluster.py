@@ -74,7 +74,7 @@ test_sentences = ['Chemical compunds are used for preparing bombs based on some 
 #turning list into actual list
 #test_sentences = ast.literal_eval(test_sentences)
 
-curr = [str(e) for e in example ]
+curr = [str(e) for e in cluster_list ]
 
 
 # pre-processing
@@ -85,7 +85,7 @@ curr = preprocess.remove_non_ascii(curr)
 print("here, after remove non-ascii")
 preprocess.remove_extra(curr)
 print("here, after remove extra")
-curr = preprocess.stemSentence(curr)
+curr = [preprocess.stemSentence(curr)]
 print("here, after stem sentence")
 
 
