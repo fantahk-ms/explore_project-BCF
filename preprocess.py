@@ -77,5 +77,5 @@ remove_extra(example)
 
 example = stemSentence(example)
 
-print(example)
+# print(example)
 

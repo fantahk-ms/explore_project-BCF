@@ -3,7 +3,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import adjusted_rand_score
 
 documents = ["This little kitty came to play when I was eating at a restaurant.",
-             "Merley has the best squooshy kitten belly.",
+            "Merley has the best squooshy kitten belly.",
              "Google Translate app is incredible.",
              "If you open 100 tab in google you get a smiley face.",
              "Best cat photo I've ever taken.",

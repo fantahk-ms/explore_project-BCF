@@ -9,11 +9,11 @@ import numpy as np
 import ast
 
 # importing
-cluster_df = transform.df_cluster
+# cluster_df = transform.df_cluster
 cluster_list = transform.cluster_list
 
 # convert to list
-cluster_list = [str(e) for e in cluster_list ]
+curr = [str(e) for e in cluster_list ]
 
 #example to run on
 example = ["Cricket is a bat and ball game played between two teams of eleven players each on a cricket field.", 
@@ -74,13 +74,14 @@ test_sentences = ['Chemical compunds are used for preparing bombs based on some 
 
 
 # pre-processing
-preprocess.tokenize(cluster_list)
-cluster_list = preprocess.remove_non_ascii(cluster_list)
-preprocess.remove_extra(cluster_list)
-cluster_list = preprocess.stemSentence(cluster_list)
+preprocess.tokenize(curr)
+curr = preprocess.remove_non_ascii(curr)
+preprocess.remove_extra(curr)
+curr = preprocess.stemSentence(curr)
 
 #turning list into actual list
-cluster_list = ast.literal_eval(cluster_list)
+curr = ast.literal_eval(curr)
+
 #print(cluster_list)
 
 
@@ -88,7 +89,7 @@ cluster_list = ast.literal_eval(cluster_list)
 
 #vectorization
 vectorizer = TfidfVectorizer(stop_words='english')
-X = vectorizer.fit_transform(cluster_list)
+X = vectorizer.fit_transform(curr)
 
 # clustering
 k = 4
