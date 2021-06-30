@@ -12,7 +12,7 @@ from nltk.stem import PorterStemmer
 
 
 current_list = transform.support_list
-curr = [str(e) for e in current_list ]
+curr = list(map(str, current_list))
 
 ascii_set = set(string.printable)
 porter=PorterStemmer()
@@ -67,16 +67,16 @@ def removestopwords(data):
         data[i] = filtered_text   
 
 
-new_ex = [str(e) for e in example ]
+# new_ex = [str(e) for e in example ]
 
 tokenize(curr)
 print("here, after tokenize")
 
 
-curr = remove_non_ascii(new_ex)
+curr = remove_non_ascii(curr)
 print("here, after remove non-ascii")
 
-remove_extra(new_ex)
+remove_extra(curr)
 print("here, after remove extra")
 
 # removestopwords(example)
@@ -84,9 +84,9 @@ print("here, after remove extra")
 #for i in example:
     #i = stemSentence(i)
 
-new_ex = stemSentence(new_ex)
+curr = stemSentence(curr)
 print("here, after stemming")
 
 
-print(new_ex)
+print(curr)
 
