@@ -38,9 +38,10 @@ def tokenize(data):
 def remove_extra(data):
    # extra = ['None', 'Grand', 'Total']
   tokens = [word_tokenize(i) for i in data]
+  # tokens = [porter.stem(x) for x in tokens]
   #  filtered = []
   for i in range(len(tokens)):
-       porter.stem(x for x in tokens[i])
+       tokens = [porter.stem(x) for x in tokens[i]]
        filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        # print(*filtered)
        data[i] = " ".join(filtered)
