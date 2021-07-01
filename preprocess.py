@@ -18,6 +18,9 @@ ascii_set = set(string.printable)
 porter=PorterStemmer()
 badwords = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please']
 
+# ask xinny for list of "bad words" --> pii, microsoft
+# add method to weed out short titles/descriptions
+
 
 example = ['Hi team, Mary had a the that [little] lamb None{}' , 
            'Jack went up the has hill himself Grand Total?' , 
