@@ -40,6 +40,7 @@ def remove_extra(data):
   tokens = [word_tokenize(i) for i in data]
   #  filtered = []
   for i in range(len(tokens)):
+       porter.stem(x for x in tokens[i])
        filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        # print(*filtered)
        data[i] = " ".join(filtered)
@@ -51,7 +52,7 @@ def remove_extra(data):
 
 def stemSentence(sentence):
     sentence = str(sentence)
-    token_words=word_tokenize(sentence)
+    token_words=word_tokenize(sentence) 
     token_words
     stem_sentence=[]
     for word in token_words:

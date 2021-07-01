@@ -85,8 +85,8 @@ curr = preprocess.remove_non_ascii(curr)
 print("here, after remove non-ascii")
 preprocess.remove_extra(curr)
 print("here, after remove extra")
-curr = ast.literal_eval([preprocess.stemSentence(curr)])
-print("here, after stem sentence")
+#curr = preprocess.stemSentence(curr)
+#print("here, after stem sentence")
 
 
 print("here, after pre-processing")
