@@ -16,7 +16,8 @@ curr = list(map(str, current_list))
 
 ascii_set = set(string.printable)
 porter=PorterStemmer()
-badwords = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please', 'pii', 'defend']
+badwords = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please', 'pii', 'defender']
+
 
 # ask xinny for list of "bad words" --> pii, microsoft, defend
 # add method to weed out short titles/descriptions
@@ -39,14 +40,17 @@ def tokenize(data):
  # return data
 
 def remove_extra(data):
+  remove_list = [porter.stem(y) for y in badwords]
    # extra = ['None', 'Grand', 'Total']
   tokens = [word_tokenize(i) for i in data]
   # tokens = [porter.stem(x) for x in tokens]
   #  filtered = []
   for i in range(len(tokens)):
+       # check to see what bad words are stemmed, stem first, then run through bad words
        # tokens = [porter.stem(x) for x in tokens[i]]
-       filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        filtered = [porter.stem(x) for x in tokens[i]]
+       filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in remove_list + stopwords.words("english")]
+       # filtered = [porter.stem(x) for x in tokens[i]]
        # filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        # print(*filtered)
        data[i] = " ".join(filtered)
