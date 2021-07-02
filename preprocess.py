@@ -51,7 +51,7 @@ def remove_extra(data):
        # tokens = [porter.stem(x) for x in tokens[i]]
        filtered = [porter.stem(x) for x in tokens[i]]
        #print(filtered)
-       filtered = [t for t in filtered if t.isalpha() and not t.lower() in remove_list + stopwords.words("english")]
+       filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in remove_list + stopwords.words("english")]
        #print(filtered)
        filtered = [porter.stem(x) for x in tokens[i]]
        #print(filtered)
