@@ -27,7 +27,7 @@ remove_list = [porter.stem(y) for y in badwords]
 example = ['Hi team, Mary had a the that [little] lamb None{} defender' , 
            'Jack went up the has hill himself Grand Total?' , 
            'Jill followed all she_! suit Please' ,'i woke up suddenly pii' ,
-           'it was a really bad defender pii own more $%*dream..\\n.', '通过代理上限MDATP设备状态异常 通过代理上限MDATP设备状态异常 apple banana 1234', 'None', 'None Grand Total', 
+           'it was a really bad defend pii own more $%*dream..\\n.', '通过代理上限MDATP设备状态异常 通过代理上限MDATP设备状态异常 apple banana 1234', 'None', 'None Grand Total', 
            'Pythoners are very intelligent and work very pythonly and now they are pythoning their way to success.']
 
 def remove_non_ascii(data):
