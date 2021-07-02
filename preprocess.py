@@ -23,10 +23,10 @@ badwords = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please
 # add method to weed out short titles/descriptions
 
 
-example = ['Hi team, Mary had a the that [little] lamb None{}' , 
+example = ['Hi team, Mary had a the that [little] lamb None{} defender' , 
            'Jack went up the has hill himself Grand Total?' , 
-           'Jill followed all she_! suit Please' ,'i woke up suddenly' ,
-           'it was a really bad own more $%*dream..\\n.', '通过代理上限MDATP设备状态异常 通过代理上限MDATP设备状态异常 apple banana 1234', 'None', 'None Grand Total', 
+           'Jill followed all she_! suit Please' ,'i woke up suddenly pii' ,
+           'it was a really bad defender pii own more $%*dream..\\n.', '通过代理上限MDATP设备状态异常 通过代理上限MDATP设备状态异常 apple banana 1234', 'None', 'None Grand Total', 
            'Pythoners are very intelligent and work very pythonly and now they are pythoning their way to success.']
 
 def remove_non_ascii(data):
@@ -41,6 +41,7 @@ def tokenize(data):
 
 def remove_extra(data):
   remove_list = [porter.stem(y) for y in badwords]
+  print(remove_list)
    # extra = ['None', 'Grand', 'Total']
   tokens = [word_tokenize(i) for i in data]
   # tokens = [porter.stem(x) for x in tokens]
@@ -49,8 +50,11 @@ def remove_extra(data):
        # check to see what bad words are stemmed, stem first, then run through bad words
        # tokens = [porter.stem(x) for x in tokens[i]]
        filtered = [porter.stem(x) for x in tokens[i]]
-       filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in remove_list + stopwords.words("english")]
+       print(filtered)
+       filtered = [t for t in filtered if t.isalpha() and not t.lower() in remove_list + stopwords.words("english")]
+       print(filtered)
        filtered = [porter.stem(x) for x in tokens[i]]
+       print(filtered)
        # filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        # print(*filtered)
        data[i] = " ".join(filtered)
@@ -82,14 +86,14 @@ def removestopwords(data):
 
 # curr = list(map(str, example))
 
-# tokenize(curr)
+tokenize(example)
 # print("here, after tokenize pre-process")
 
 
-# curr = remove_non_ascii(curr)
+example = remove_non_ascii(example)
 # print("here, after remove non-ascii pre-process")
 
-# remove_extra(curr)
+remove_extra(example)
 # print("here, after remove extra pre-process")
 
 # removestopwords(example)
@@ -100,6 +104,5 @@ def removestopwords(data):
 # curr = stemSentence(curr)
 # print("here, after stemming pre-process")
 
-
-# print(curr)
+print(example)
 
