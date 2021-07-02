@@ -16,9 +16,9 @@ curr = list(map(str, current_list))
 
 ascii_set = set(string.printable)
 porter=PorterStemmer()
-badwords = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please']
+badwords = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please', 'pii']
 
-# ask xinny for list of "bad words" --> pii, microsoft
+# ask xinny for list of "bad words" --> pii, microsoft, defend
 # add method to weed out short titles/descriptions
 
 
@@ -47,6 +47,7 @@ def remove_extra(data):
        # tokens = [porter.stem(x) for x in tokens[i]]
        filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        filtered = [porter.stem(x) for x in tokens[i]]
+       filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        # print(*filtered)
        data[i] = " ".join(filtered)
       # print("\n")
