@@ -78,23 +78,23 @@ curr = [str(e) for e in cluster_list ]
 
 
 # pre-processing
-print("here, before pre-processing")
+#print("here, before pre-processing")
 preprocess.tokenize(curr)
-print("here, after tokenize")
+#print("here, after tokenize")
 curr = preprocess.remove_non_ascii(curr)
-print("here, after remove non-ascii")
+#print("here, after remove non-ascii")
 preprocess.remove_extra(curr)
-print("here, after remove extra")
+#print("here, after remove extra")
 #curr = preprocess.stemSentence(curr)
 #print("here, after stem sentence")
 
 
-print("here, after pre-processing")
+#print("here, after pre-processing")
 
-print("here, before list transform")
+#print("here, before list transform")
 #turning list into actual list
 # curr = ast.literal_eval(curr)
-print("here, after list transform")
+#print("here, after list transform")
 
 
 #print(cluster_list)
