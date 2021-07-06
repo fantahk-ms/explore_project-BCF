@@ -50,11 +50,11 @@ def remove_extra(data):
   for i in range(len(tokens)):
        # check to see what bad words are stemmed, stem first, then run through bad words
        # tokens = [porter.stem(x) for x in tokens[i]]
-       filtered = [porter.stem(x) for x in tokens[i]]
+       # filtered = [porter.stem(x) for x in tokens[i]]
        #print(filtered)
-       filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in (remove_list or badwords) + stopwords.words("english")]
+       filtered = [porter.stem(t) for t in tokens[i] if t.isalpha() and not t.lower() in (remove_list or badwords) + stopwords.words("english")]
        #print(filtered)
-       filtered = [porter.stem(x) for x in filtered]
+       # filtered = [porter.stem(x) for x in filtered]
        #print(filtered)
        # filtered = [t for t in tokens[i] if t.isalpha() and not t.lower() in badwords + stopwords.words("english")]
        # print(*filtered)
