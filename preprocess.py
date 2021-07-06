@@ -16,7 +16,7 @@ curr = list(map(str, current_list))
 
 ascii_set = set(string.printable)
 porter=PorterStemmer()
-badwords = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please', 'pii', 'defender', 'microsoft', 'endpoint', 'window']
+badwords = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please', 'pii', 'defender', 'microsoft', 'endpoint', 'windows', 'device', 'onboard']
 remove_list = [porter.stem(y) for y in badwords]
 
 
