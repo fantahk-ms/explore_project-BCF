@@ -107,7 +107,7 @@ vectorizer = TfidfVectorizer(stop_words='english')
 X = vectorizer.fit_transform(curr)
 
 # clustering
-k = 32
+k = 40
 model = KMeans(n_clusters=k, init='k-means++', max_iter=200, n_init=1)
 model.fit(X)
 
