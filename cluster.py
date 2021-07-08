@@ -117,6 +117,8 @@ model.fit(X)
 # test sentences prediction
 #predicted_labels_kmeans = model.predict(test)
 
+df = pd.DataFrame(curr, columns=['Text', 'Cluster'])
+clusters = [df[model == i] for i in range(k)]
 
 # top terms printed out
 print("Top terms per cluster:")
@@ -129,6 +131,13 @@ for i in range(k):
     print
 
 print("\n")
+
+df = pd.DataFrame(curr, columns=['Text', 'Cluster'])
+clusters = [df[model == i] for i in range(k)]
+
+for i, c in enumerate(clusters):
+    print('Cluster {} has {} members: {}...'.format(i, len(c), c[0]))
+
 
 
 # test

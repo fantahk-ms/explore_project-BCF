@@ -10,9 +10,9 @@ from nltk import tokenize
 # from nltk.stem import sent_tokenize
 from nltk.stem import PorterStemmer
 
-
 current_list = transform.support_list
 curr = list(map(str, current_list))
+
 
 ascii_set = set(string.printable)
 porter=PorterStemmer()
