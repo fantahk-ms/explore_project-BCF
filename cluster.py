@@ -11,6 +11,7 @@ import ast
 # importing
 # cluster_df = transform.df_cluster
 cluster_list = transform.cluster_list
+cluster_df = transform.df_cluster
 
 # convert to list
 print("here, line 16")
@@ -117,8 +118,7 @@ model.fit(X)
 # test sentences prediction
 #predicted_labels_kmeans = model.predict(test)
 
-df = pd.DataFrame(curr, columns=['Text', 'Cluster'])
-clusters = [df[model == i] for i in range(k)]
+
 
 # top terms printed out
 print("Top terms per cluster:")
@@ -131,6 +131,14 @@ for i in range(k):
     print
 
 print("\n")
+
+data = cluster_df.to_csv()
+cluster_map = pd.DataFrame()
+cluster_map['cluster'] = model.labels_
+
+print(cluster_map[cluster_map.cluster == 3])
+
+
 
 
 
