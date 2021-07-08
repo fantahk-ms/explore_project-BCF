@@ -1,3 +1,4 @@
+from operator import mod
 import transform
 import preprocess
 import pandas as pd
@@ -121,24 +122,27 @@ model.fit(X)
 
 
 # top terms printed out
-print("Top terms per cluster:")
-order_centroids = model.cluster_centers_.argsort()[:, ::-1]
-terms = vectorizer.get_feature_names()
-for i in range(k):
-    print("Cluster %d:" % i),
-    for ind in order_centroids[i, :10]:
-        print(' %s' % terms[ind]),
-    print
+#print("Top terms per cluster:")
+#order_centroids = model.cluster_centers_.argsort()[:, ::-1]
+#terms = vectorizer.get_feature_names()
+#for i in range(k):
+ #   print("Cluster %d:" % i),
+  #  for ind in order_centroids[i, :10]:
+   #     print(' %s' % terms[ind]),
+    #print
 
-print("\n")
+#print("\n")
 
 data = cluster_df.to_csv()
 cluster_map = pd.DataFrame()
 cluster_map['cluster'] = model.labels_
 
-print(cluster_map[cluster_map.cluster == 3])
+# print(cluster_map[cluster_map.cluster == 3])
 
+def ClusterIndicesNumpy(clustNum, labels_array):
+    return np.where(labels_array == clustNum)[0]
 
+print(ClusterIndicesNumpy(0, model.labels_))
 
 
 
