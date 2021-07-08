@@ -142,7 +142,7 @@ cluster_map['cluster'] = model.labels_
 def ClusterIndicesNumpy(clustNum, labels_array):
     return np.where(labels_array == clustNum)[0]
 
-print(ClusterIndicesNumpy(0, model.labels_))
+print(ClusterIndicesNumpy(3, model.labels_))
 
 
 
