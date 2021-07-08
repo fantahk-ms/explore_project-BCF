@@ -110,7 +110,7 @@ X = vectorizer.fit_transform(curr)
 
 # clustering
 k = 30
-model = KMeans(n_clusters=k, init='k-means++', max_iter=200, n_init=1)
+model = KMeans(n_clusters=k, init='k-means++', max_iter=400, n_init=1)
 model.fit(X)
 
 #test sentences vectorization
@@ -122,22 +122,22 @@ model.fit(X)
 
 
 # top terms printed out
-#print("Top terms per cluster:")
-#order_centroids = model.cluster_centers_.argsort()[:, ::-1]
-#terms = vectorizer.get_feature_names()
-#for i in range(k):
- #   print("Cluster %d:" % i),
-  #  for ind in order_centroids[i, :10]:
-   #     print(' %s' % terms[ind]),
-    #print
+print("Top terms per cluster:")
+order_centroids = model.cluster_centers_.argsort()[:, ::-1]
+terms = vectorizer.get_feature_names()
+for i in range(k):
+    print("Cluster %d:" % i),
+    for ind in order_centroids[i, :10]:
+        print(' %s' % terms[ind]),
+    print
 
-#print("\n")
+print("\n")
 
 data = cluster_df.to_csv()
 cluster_map = pd.DataFrame()
 cluster_map['cluster'] = model.labels_
 
-print(cluster_map[cluster_map.cluster == 3])
+# print(cluster_map[cluster_map.cluster == 3])
 
 #def ClusterIndicesNumpy(clustNum, labels_array):
     #return np.where(labels_array == clustNum)[0]
