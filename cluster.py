@@ -110,7 +110,7 @@ X = vectorizer.fit_transform(curr)
 
 # clustering
 k = 30
-model = KMeans(n_clusters=k, init='k-means++', max_iter=600, n_init=1)
+model = KMeans(n_clusters=k, init='k-means++', max_iter=300, n_init=1)
 model.fit(X)
 
 #test sentences vectorization
