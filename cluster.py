@@ -132,12 +132,6 @@ for i in range(k):
 
 print("\n")
 
-df = pd.DataFrame(curr, columns=['Text', 'Cluster'])
-clusters = [df[model == i] for i in range(k)]
-
-for i, c in enumerate(clusters):
-    print('Cluster {} has {} members: {}...'.format(i, len(c), c[0]))
-
 
 
 # test
