@@ -137,12 +137,12 @@ data = cluster_df.to_csv()
 cluster_map = pd.DataFrame()
 cluster_map['cluster'] = model.labels_
 
-# print(cluster_map[cluster_map.cluster == 3])
+print(cluster_map[cluster_map.cluster == 3])
 
-def ClusterIndicesNumpy(clustNum, labels_array):
-    return np.where(labels_array == clustNum)[0]
+#def ClusterIndicesNumpy(clustNum, labels_array):
+    #return np.where(labels_array == clustNum)[0]
 
-print(X[ClusterIndicesNumpy(3, model.labels_)])
+#print(X[ClusterIndicesNumpy(3, model.labels_)])
 
 
 
