@@ -116,5 +116,10 @@ remove_extra(new_tickets)
 # curr = stemSentence(curr)
 # print("here, after stemming pre-process")
 
-print(new_tickets)
+print(new_tickets.__len__)
+print(process_df['Ticket'].__len__)
+
+#process_df['Tickets'] = new_tickets
+
+print(process_df['Ticket'])
 
