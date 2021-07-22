@@ -1,4 +1,6 @@
 from pickle import TRUE
+
+from numpy import empty
 import transform
 import string
 import nltk
@@ -100,14 +102,23 @@ def removestopwords(data):
 
 # curr = list(map(str, example))
 
-tokenize(new_tickets)
+
+for i in process:
+    tokenize(process[i][2])
+    process[i][2] = remove_non_ascii(process[i][2])
+    remove_extra(process[i][2])
+    if (process[i][2] is empty):
+        process.remove(process[i])
+print(process)
+    
+#tokenize(new_tickets)
 # print("here, after tokenize pre-process")
 
 
-new_tickets = remove_non_ascii(new_tickets)
+#new_tickets = remove_non_ascii(new_tickets)
 # print("here, after remove non-ascii pre-process")
 
-remove_extra(new_tickets)
+#remove_extra(new_tickets)
 # print("here, after remove extra pre-process")
 
 # removestopwords(example)
@@ -121,8 +132,13 @@ remove_extra(new_tickets)
 
 # process_df.dropna(subset=["Ticket"], inplace=TRUE)
 
-print(process_df['Ticket'])
-print(process_df)
 
-to_export = process_df.to_csv(r'/Users/t-fkabba/Downloads/PreProcessed4.csv', index=False)
+#ser = pd.Series(new_tickets)
+#print(ser)
+#process_df["Ticket"] = ser
+
+#print(process_df['Ticket'])
+#print(process_df)
+
+#to_export = process_df.to_csv(r'/Users/t-fkabba/Downloads/PreProcessed4.csv', index=False)
 
