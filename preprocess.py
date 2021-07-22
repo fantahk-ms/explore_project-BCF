@@ -119,7 +119,7 @@ remove_extra(new_tickets)
 # print("here, after stemming pre-process")
 
 
-process_df.dropna(subset=["Ticket"], inplace=TRUE) = new_tickets
+# process_df.dropna(subset=["Ticket"], inplace=TRUE)
 
 print(process_df['Ticket'])
 print(process_df)
