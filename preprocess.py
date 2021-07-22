@@ -118,6 +118,9 @@ def removestopwords(data):
 
 tokenize(process_df['Ticket'])
 
+process_df.dropna(subset=["Ticket"], inplace=True)
+
+
 process_df['Ticket'] = remove_non_ascii(process_df['Ticket'])
 
 
@@ -126,11 +129,11 @@ remove_extra(process_df['Ticket'])
 
 
 
-df = pd.DataFrame(process_df)
+#df = pd.DataFrame(process_df)
 
-print(df)
+print(process_df)
 
-df.dropna(subset=["Ticket"], inplace=True)
+#df.dropna(subset=["Ticket"], inplace=True)
 
 print(process_df['Ticket'])
 
