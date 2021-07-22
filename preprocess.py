@@ -118,9 +118,8 @@ remove_extra(new_tickets)
 # curr = stemSentence(curr)
 # print("here, after stemming pre-process")
 
-process_df.dropna(subset=["Ticket"], inplace=TRUE)
 
-process_df['Ticket'] = new_tickets
+process_df.dropna(subset=["Ticket"], inplace=TRUE) = new_tickets
 
 print(process_df['Ticket'])
 print(process_df)
