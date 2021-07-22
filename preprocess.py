@@ -116,12 +116,12 @@ def removestopwords(data):
 
 
 
-tokenize(process_df)
+tokenize(process_df['Ticket'])
 
-process_df = remove_non_ascii(process_df)
+process_df['Ticket'] = remove_non_ascii(process_df['Ticket'])
 
 
-remove_extra(process_df)
+remove_extra(process_df['Ticket'])
 
 
 
