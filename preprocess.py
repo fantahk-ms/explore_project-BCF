@@ -21,6 +21,8 @@ process_df = transform.df_process
 process_list = transform.process_list
 process = list(map(str, process_list))
 tickets = process_df['Ticket']
+platforms = process_df['Platform']
+subgroups = process_df['Category']
 
 tickets1 = tickets.tolist()
 new_tickets = list(map(str, tickets1))
@@ -103,34 +105,32 @@ def removestopwords(data):
 # curr = list(map(str, example))
 
 
-for i in range(len(process)):
-    tokenize(process[i][2])
-    process[i][2] = remove_non_ascii(process[i][2])
-    remove_extra(process[i][2])
-    if (process[i][2] is empty):
-        process.remove(process[i])
-print(process)
+#for i in range(len(process)):
+ #   tokenize(process[i][2])
+  #  process[i][2] = remove_non_ascii(process[i][2])
+   # remove_extra(process[i][2])
+    #if (process[i][2] is empty):
+     #   process.remove(process[i])
+#print(process)
     
-#tokenize(new_tickets)
-# print("here, after tokenize pre-process")
 
 
-#new_tickets = remove_non_ascii(new_tickets)
-# print("here, after remove non-ascii pre-process")
 
-#remove_extra(new_tickets)
-# print("here, after remove extra pre-process")
+tokenize(process_df)
 
-# removestopwords(example)
-
-#for i in example:
-    #i = stemSentence(i)
-
-# curr = stemSentence(curr)
-# print("here, after stemming pre-process")
+process_df = remove_non_ascii(process_df)
 
 
-# process_df.dropna(subset=["Ticket"], inplace=TRUE)
+remove_extra(process_df)
+
+
+
+
+
+
+process_df.dropna(subset=["Ticket"], inplace=TRUE)
+
+print(process_df['Ticket'])
 
 
 #ser = pd.Series(new_tickets)
