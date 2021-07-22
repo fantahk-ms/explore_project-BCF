@@ -128,7 +128,7 @@ remove_extra(process_df)
 
 df = pd.DataFrame(process_df)
 
-df.dropna(subset=["Ticket"], inplace=TRUE)
+df.dropna(subset=["Ticket"], inplace=True)
 
 print(process_df['Ticket'])
 
