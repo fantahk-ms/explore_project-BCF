@@ -8,10 +8,20 @@ from nltk import word_tokenize
 import re
 from nltk import tokenize
 # from nltk.stem import sent_tokenize
-from nltk.stem import PorterStemmer
+from nltk.stem import PorterStemmer 
 
 current_list = transform.support_list
 curr = list(map(str, current_list))
+
+process_df = transform.df_process
+process_list = transform.process_list
+process = list(map(str, process_list))
+tickets = process_df['Ticket']
+
+tickets1 = tickets.tolist()
+new_tickets = list(map(str, tickets1))
+
+
 
 
 ascii_set = set(string.printable)
@@ -88,14 +98,14 @@ def removestopwords(data):
 
 # curr = list(map(str, example))
 
-tokenize(example)
+tokenize(new_tickets)
 # print("here, after tokenize pre-process")
 
 
-example = remove_non_ascii(example)
+new_tickets = remove_non_ascii(new_tickets)
 # print("here, after remove non-ascii pre-process")
 
-remove_extra(example)
+remove_extra(new_tickets)
 # print("here, after remove extra pre-process")
 
 # removestopwords(example)
@@ -106,5 +116,5 @@ remove_extra(example)
 # curr = stemSentence(curr)
 # print("here, after stemming pre-process")
 
-print(example)
+print(new_tickets)
 
