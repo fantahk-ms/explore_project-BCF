@@ -121,10 +121,12 @@ tokenize(process_df['Ticket'])
 process_df.dropna(subset=["Ticket"], inplace=True)
 
 
-process_df['Ticket'] = remove_non_ascii(process_df['Ticket'])
+process_df['Ticket'].dropna = remove_non_ascii(process_df['Ticket'])
 
 
 remove_extra(process_df['Ticket'])
+
+process_df.dropna(subset=["Ticket"], inplace=True)
 
 
 
@@ -145,5 +147,5 @@ print(process_df['Ticket'])
 #print(process_df['Ticket'])
 #print(process_df)
 
-#to_export = process_df.to_csv(r'/Users/t-fkabba/Downloads/PreProcessed4.csv', index=False)
+to_export = process_df.to_csv(r'/Users/t-fkabba/Downloads/PreProcessed5.csv', index=False)
 
