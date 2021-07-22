@@ -103,7 +103,7 @@ def removestopwords(data):
 # curr = list(map(str, example))
 
 
-for i in process:
+for i in range(len(process)):
     tokenize(process[i][2])
     process[i][2] = remove_non_ascii(process[i][2])
     remove_extra(process[i][2])
