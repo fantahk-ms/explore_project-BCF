@@ -43,7 +43,7 @@ df_cluster = pd.DataFrame(SQL_cluster, columns=['Title', 'UserDescription'])
 df_process = pd.DataFrame(SQL_process, columns=['Category', 'Device', 'Ticket'])
 
 tickets = df_process['Ticket']
-print("Tickets " + "\n" + tickets)
+print(tickets)
 
 support_list = [df_support.columns.values.tolist()] + df_support.values.tolist()
 
