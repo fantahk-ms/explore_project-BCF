@@ -40,7 +40,7 @@ df_testing = pd.DataFrame(SQL_test, columns=['Title', 'UserDescription'])
 
 df_cluster = pd.DataFrame(SQL_cluster, columns=['Title', 'UserDescription'])
 
-df_process = pd.DataFrame(SQL_process, columns=['Category', 'Device', 'Ticket'])
+df_process = pd.DataFrame(SQL_process, columns=['Category', 'Platform', 'Ticket'])
 
 support_list = [df_support.columns.values.tolist()] + df_support.values.tolist()
 
