@@ -1,3 +1,4 @@
+from pickle import TRUE
 import transform
 import string
 import nltk
@@ -117,11 +118,10 @@ remove_extra(new_tickets)
 # curr = stemSentence(curr)
 # print("here, after stemming pre-process")
 
-ser = pd.Series(new_tickets)
-process_df['Ticket'] = ser
+process_df.dropna(subset=["Ticket"], inplace=TRUE)
 
 print(process_df['Ticket'])
 print(process_df)
 
-to_export = process_df.to_csv(r'/Users/t-fkabba/Downloads/PreProcessed2.csv', index=False)
+to_export = process_df.to_csv(r'/Users/t-fkabba/Downloads/PreProcessed3.csv', index=False)
 
