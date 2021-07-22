@@ -9,6 +9,7 @@ import re
 from nltk import tokenize
 # from nltk.stem import sent_tokenize
 from nltk.stem import PorterStemmer 
+import pandas as pd
 
 current_list = transform.support_list
 curr = list(map(str, current_list))
@@ -116,10 +117,11 @@ remove_extra(new_tickets)
 # curr = stemSentence(curr)
 # print("here, after stemming pre-process")
 
-print(new_tickets.__len__)
-print(process_df['Ticket'].__len__)
-
-#process_df['Tickets'] = new_tickets
+ser = pd.Series(new_tickets)
+process_df['Ticket'] = ser
 
 print(process_df['Ticket'])
+print(process_df)
+
+to_export = process_df.to_csv(r'/Users/t-fkabba/Downloads/PreProcessedCurrData.csv', index=False)
 
