@@ -16,7 +16,7 @@ curr = list(map(str, current_list))
 
 ascii_set = set(string.printable)
 porter=PorterStemmer()
-exclusion_list = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please', 'pii', 'defender', 'microsoft', 'endpoint', 'windows', 'thanks', 'monday', 'tuesday', 
+exclusion_list = ['grand', 'total','none', 'hello','hi','team','how','i','\\n','please', 'pii', 'defender', 'microsoft', 'endpoint', 'thanks', 'monday', 'tuesday', 
 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'ticket', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 stemmed_exclusion_list = [porter.stem(y) for y in exclusion_list]
 
