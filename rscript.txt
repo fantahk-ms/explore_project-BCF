@@ -1,0 +1,7 @@
+// Below is the R script needed to move Power Query data to the SQL server
+
+library(RODBC)
+conn <- odbcDriverConnect("DRIVER={ODBC Driver 17 for SQL Server};SERVER=explorer-interns.database.windows.net;Database=explorer;uid=explorer;pwd=expl@rerint@rns@1")
+odbcClearError(conn)
+sqlSave(conn, dataset, tablename="SQLPowerBICategoryTest",rownames=FALSE, safer=FALSE, append=TRUE)
+close(conn)
